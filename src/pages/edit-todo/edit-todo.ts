@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Data } from "../../providers/data";
 
 /**
  * Generated class for the EditTodo page.
@@ -15,7 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class EditTodo {
     todo: any;
 
-    constructor ( public navCtrl : NavController, public navParams : NavParams ) {
+    constructor ( public navCtrl : NavController, public navParams : NavParams, private dataService: Data ) {
         this.todo = {
             title: '',
             description: ''
@@ -26,11 +27,17 @@ export class EditTodo {
      * Судя по всему этот метод дает доступ к параметрам переданным через navCtrl
      */
     ionViewDidLoad () {
-        this.todo = this.navParams.get('todo');
+        let todo = this.navParams.get('todo');
+        if(typeof todo !== 'undefined'){
+            this.todo = todo;
+        }
     }
 
     save(){
-        console.log('TODO finish function');
+        // это бросит нас на домашнюю страницу
+        this.dataService.save(this.todo);
+        this.navCtrl.pop();
+
     }
 
 }
