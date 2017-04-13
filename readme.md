@@ -7,3 +7,8 @@
 ## получить список команд генерации
 
     ionic g --list
+    
+## подключить sql
+
+    ionic plugin add cordova-sqlite-storage
+    

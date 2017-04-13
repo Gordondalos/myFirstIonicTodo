@@ -20,7 +20,6 @@ export class HomePage implements OnInit {
 
     addTodo () {
         this.navCtrl.push ( EditTodo );
-        console.log ( 'add' );
     }
 
     editTodo ( todo ) {

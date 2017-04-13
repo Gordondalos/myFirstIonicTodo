@@ -40,7 +40,6 @@ import { Data } from "../providers/data";
         StatusBar,
         SplashScreen,
         Data,
-        Storage,
 
 
         { provide : ErrorHandler, useClass : IonicErrorHandler }
