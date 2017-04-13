@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Todo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary" floating>Title</ion-label>
+      <ion-input [(ngModel)]="todo.title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>Title</ion-label>
+      <ion-input [(ngModel)]="todo.description"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full (click)="save()">Сохранить</button>
+
+</ion-content>
